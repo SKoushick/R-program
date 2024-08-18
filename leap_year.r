@@ -1,21 +1,21 @@
 
-#a=readline(prompt="Enter the value for a:)
-#a=as.integer(a)
+a=readline(prompt="Enter the value for a:)
+a=as.integer(a)
 
-#b=readline(prompt="Enter the value for b:")
-#b=as.integer(b)
+b=readline(prompt="Enter the value for b:")
+b=as.integer(b)
 
 
-#if(a<b){
- # cat("the value of a is smaller than b..")
+if(a<b){
+ cat("the value of a is smaller than b..")
   
-#} else if(a>b) {
-#  cat("the value of a is greater than b..")
-#} else{
-#  cat("both the a and b are equal")
+} else if(a>b) {
+ cat("the value of a is greater than b..")
+} else{
+  cat("both the a and b are equal")
 
 
-#}
+}
 
 
 d=readline(prompt="Enter the year:")
