@@ -30,13 +30,50 @@ print(High_Avg)
 
 #2nd Problem
 book_stock=c(8, 15, 3, 12, 6)
-book_stock &lt;- c(8, 15, 3, 12, 6)
+book_stock= c(8, 15, 3, 12, 6)
 for(i in 1:length(book_stock)) {
   
   if (book_stock[i]<5) {
-    book_stock[i] &lt;- book_stock[i] + 10
+    book_stock[i] =book_stock[i] + 10
   } 
 }
+
+
+#2
+low_stock_count=sum(book_stock<5)
+print(low_stock_count)
+
+#3
+total_stock=sum(book_stock)
+print(total_stock)
+
+#3 question
+w1=Week1+Week2
+w2=Week1-Week2
+w3=Week1*Week2
+w4=sum(w1*w2)
+print(w1)
+print(w2)
+print(w3)
+print(w4)
+
+
+#3)2)
+book_store_length=length(book_stock)
+print(book_store_length)
+
+sorted=sort(book_stock,decreasing = TRUE)
+print(sorted)
+
+for(i in book_stock){
+  new_book=book_stock[i]>10
+}
+
+book_stock(is.na(book_stock))=0
+concated=paste(book_stock,collapse = ",")
+print(concated)
+book_stock_mean=mean(book_stock)
+print(book_stock_mean)
 
 #15)b)
 
@@ -96,3 +133,4 @@ print(Avg_total)
 
 total_compare=total_a+total_b
 print(which.max(total_compare))
+
