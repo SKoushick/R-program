@@ -23,3 +23,14 @@ for(i in 1:length(std_detail)){
 
 high_avg=which.max(avg)
 high_avg_std=std_detail[[high_avg]]$name
+
+
+e1=list("name"="rohan","dept"="IT","salary"=50000)
+e2=list("name"="dhoni","dept"="CSE","salary"=40000)
+e3=list("name"="sanjeev","dept"="AIDS","salary"=80000)
+
+emp_detail=list(e1,e2,e3)
+
+for(i in 1:length(emp_detail)){
+  emp_name=emp_detail[i]$names
+}
