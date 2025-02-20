@@ -1,0 +1,218 @@
+ df <- data.frame(
++   Name=c("John", "Alice", "Bob", "Emma"),
++   Age = c(23, 25, 22, 24),
++   Score = c(90, 85, 88, 95)
++ )
+> 
+> print("Original Data Frame:")
+[1] "Original Data Frame:"
+> print(df)
+   Name Age Score
+1  John  23    90
+2 Alice  25    85
+3   Bob  22    88
+4  Emma  24    95
+> 
+> # Select only the 'Name' and 'Score' columns
+> df_selected <- df[, c("Name", "Score")]
+> print("Selected Columns:")
+[1] "Selected Columns:"
+> print(df_selected)
+   Name Score
+1  John    90
+2 Alice    85
+3   Bob    88
+4  Emma    95
+> 
+> # Filter students who scored more than 85
+> df_filtered <- df[df$Score > 85, ]
+> print("Filtered Data Frame (Score > 85):")
+[1] "Filtered Data Frame (Score > 85):"
+> print(df_filtered)
+  Name Age Score
+1 John  23    90
+3  Bob  22    88
+4 Emma  24    95
+> 
+> # Add a column 'Pass' (Pass if Score >= 90)
+> df$Gender <- c('M','M','M','F')
+> df$Pass <- ifelse(df$Score>=90,"Yes","No")
+> df <- data.frame(
++   Name=c("John", "Alice", "Bob", "Emma"),
++   Age = c(23, 25, 22, 24),
++   Score = c(90, 85, 88, 95)
++ )
+> 
+> print("Original Data Frame:")
+[1] "Original Data Frame:"
+> print(df)
+   Name Age Score
+1  John  23    90
+2 Alice  25    85
+3   Bob  22    88
+4  Emma  24    95
+> 
+> # Select only the 'Name' and 'Score' columns
+> df_selected <- df[, c("Name", "Score")]
+> print("Selected Columns:")
+[1] "Selected Columns:"
+> print(df_selected)
+   Name Score
+1  John    90
+2 Alice    85
+3   Bob    88
+4  Emma    95
+> 
+> # Filter students who scored more than 85
+> df_filtered <- df[df$Score > 85, ]
+> print("Filtered Data Frame (Score > 85):")
+[1] "Filtered Data Frame (Score > 85):"
+> print(df_filtered)
+  Name Age Score
+1 John  23    90
+3  Bob  22    88
+4 Emma  24    95
+> 
+> # Add a column 'Pass' (Pass if Score >= 90)
+> df$Gender <- c('M','M','M','F')
+> df$Pass <- ifelse(df$Score>=90,"Yes","No")
+> print("Data Frame with New Column (Pass):")
+[1] "Data Frame with New Column (Pass):"
+> print(df)
+   Name Age Score Gender Pass
+1  John  23    90      M  Yes
+2 Alice  25    85      M   No
+3   Bob  22    88      M   No
+4  Emma  24    95      F  Yes
+> 
+> 
+>                
+>               # Sort data by Age in ascending order
+> df_sorted <- df[order(df$Age), ]
+>               
+> print("Sorted by Age (Ascending):")
+[1] "Sorted by Age (Ascending):"
+> print(df_sorted)
+   Name Age Score Gender Pass
+3   Bob  22    88      M   No
+1  John  23    90      M  Yes
+4  Emma  24    95      F  Yes
+2 Alice  25    85      M   No
+> 
+> # Rename 'Score' column to 'Marks'
+> colnames(df)[colnames(df) == "Score"] <- "Marks"
+> print("Renamed Data Frame:")
+[1] "Renamed Data Frame:"
+> print(df)
+   Name Age Marks Gender Pass
+1  John  23    90      M  Yes
+2 Alice  25    85      M   No
+3   Bob  22    88      M   No
+4  Emma  24    95      F  Yes
+> 
+> # Remove the 'Pass' column
+> df$Pass <- NULL
+> print("Data Frame after Removing 'Pass' Column:")
+[1] "Data Frame after Removing 'Pass' Column:"
+> print(df)
+   Name Age Marks Gender
+1  John  23    90      M
+2 Alice  25    85      M
+3   Bob  22    88      M
+4  Emma  24    95      F
+> 
+> # Get the number of rows and columns
+> num_rows <- nrow(df)
+> num_cols <- ncol(df)
+> 
+> print(paste("Number of Rows:", num_rows))
+[1] "Number of Rows: 4"
+> print(paste("Number of Columns:", num_cols))
+[1] "Number of Columns: 4"
+> 
+> # Check for missing values
+> print("Missing Values in Each Column:")
+[1] "Missing Values in Each Column:"
+> print(colSums(is.na(df)))
+  Name    Age  Marks Gender 
+     0      0      0      0 
+> # Replace missing values in 'Marks' with the average score
+> df$Marks[is.na(df$Marks)] <- mean(df$Marks, na.rm=TRUE)
+> print("Data Frame After Replacing Missing Values:")
+[1] "Data Frame After Replacing Missing Values:"
+> print(df)
+   Name Age Marks Gender
+1  John  23    90      M
+2 Alice  25    85      M
+3   Bob  22    88      M
+4  Emma  24    95      F
+> print("Data Frame with New Column (Pass):")
+[1] "Data Frame with New Column (Pass):"
+> print(df)
+   Name Age Score Gender Pass
+1  John  23    90      M  Yes
+2 Alice  25    85      M   No
+3   Bob  22    88      M   No
+4  Emma  24    95      F  Yes
+> 
+> 
+>                
+>               # Sort data by Age in ascending order
+> df_sorted <- df[order(df$Age), ]
+>               
+> print("Sorted by Age (Ascending):")
+[1] "Sorted by Age (Ascending):"
+> print(df_sorted)
+   Name Age Score Gender Pass
+3   Bob  22    88      M   No
+1  John  23    90      M  Yes
+4  Emma  24    95      F  Yes
+2 Alice  25    85      M   No
+> 
+> # Rename 'Score' column to 'Marks'
+> colnames(df)[colnames(df) == "Score"] <- "Marks"
+> print("Renamed Data Frame:")
+[1] "Renamed Data Frame:"
+> print(df)
+   Name Age Marks Gender Pass
+1  John  23    90      M  Yes
+2 Alice  25    85      M   No
+3   Bob  22    88      M   No
+4  Emma  24    95      F  Yes
+> 
+> # Remove the 'Pass' column
+> df$Pass <- NULL
+> print("Data Frame after Removing 'Pass' Column:")
+[1] "Data Frame after Removing 'Pass' Column:"
+> print(df)
+   Name Age Marks Gender
+1  John  23    90      M
+2 Alice  25    85      M
+3   Bob  22    88      M
+4  Emma  24    95      F
+> 
+> # Get the number of rows and columns
+> num_rows <- nrow(df)
+> num_cols <- ncol(df)
+> 
+> print(paste("Number of Rows:", num_rows))
+[1] "Number of Rows: 4"
+> print(paste("Number of Columns:", num_cols))
+[1] "Number of Columns: 4"
+> 
+> # Check for missing values
+> print("Missing Values in Each Column:")
+[1] "Missing Values in Each Column:"
+> print(colSums(is.na(df)))
+  Name    Age  Marks Gender 
+     0      0      0      0 
+> # Replace missing values in 'Marks' with the average score
+> df$Marks[is.na(df$Marks)] <- mean(df$Marks, na.rm=TRUE)
+> print("Data Frame After Replacing Missing Values:")
+[1] "Data Frame After Replacing Missing Values:"
+> print(df)
+   Name Age Marks Gender
+1  John  23    90      M
+2 Alice  25    85      M
+3   Bob  22    88      M
+4  Emma  24    95      F
